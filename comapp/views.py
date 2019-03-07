@@ -114,6 +114,7 @@ def logout(request):
 
 
 
+# s
 def get_seats(request):
     seats = Seats.objects.all()
     return render(request,'app_seats.html',{'seats':seats})
