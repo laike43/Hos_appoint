@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}我的博客{% endblock %}
+
+{% block content %}
+
+
+<h1 style="text-align: center">Welcome!</h1>
+    <h3 style="text-align: center">病人预约列表-首页</h3>
+    <ol>
+        {% for row in appoint %}
+    <ul>
+        <li>编号:{{ row.seat_num }}                 <a href="/edit/{{row.id}}">回复</a>
+            <p> 病人: <a href="/doc_pat/{{ row.client_name }}">{{ row.client_name }}</a>
+            <p> 是否通过:{{ row.agree }}  
+            <p> 病情描述:{{ row.client_message }} 
+            <p>回复信息:{{ row.doc_message }}
+        </li>
+        <hr>
+    </ul>
+        {% endfor %}
+    </ol>
+
+
+
+{% endblock %}

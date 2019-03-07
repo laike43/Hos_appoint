@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}医院网上平台{% endblock %}
+
+{% block content %}
+
+
+<h1 style="text-align: center">Welcome!</h1>
+    <h3 style="text-align: center">预约列表-首页</h3>
+    <ul>
+        {% for row in appoint %}
+            <li>{{ row.seat_num }}   {{ row.client_name }} {{ row.message }} {{ row.agree }}   <a href="/appoint-detail/{{ row.seat_num }}">详情 </a> <a href="/del_appoint/{{row.id}}">删除</a></li>
+            <hr>
+    {% endfor %}
+    </ul>
+
+
+
+{% endblock %}

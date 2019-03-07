@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}我的博客{% endblock %}
+
+{% block content %}
+
+
+<h1 style="text-align: center">Welcome!</h1>
+    <h3 style="text-align: center">预约-首页</h3>
+    <ul>
+       
+            <li> 预约编号:{{ seat_num}} 
+                <p> 医生:{{ name }}
+                <p> 预约时间:{{ starttime }} | 到  |{{ endtime }}
+                <p> {{ brief }}
+                <p> 病情描述:{{ C_message}}
+                <p> 医生回复: {{ D_message}}
+                <p> 是否成功:{{agree}}
+            </li>
+            <hr>
+       
+    </ul>
+
+
+
+{% endblock %}

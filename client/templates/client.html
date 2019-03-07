@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}医疗中心{% endblock %}
+
+{% block content %}
+
+
+<h1 style="text-align: center">Welcome!</h1>
+    <h3 style="text-align: center">病人个人情况</h3>
+    <ul>
+        {% for row in patient %}
+            <li>姓名:{{ row.name }}        性别:{{ row.sex }}
+                <p> 个人情况:{{ row.message }}
+                <p>注意事项: {{ row.brief }} </li>
+            <hr>
+        {% endfor %}
+    </ul>
+
+
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}医疗中心{% endblock %}
+
+{% block content %}
+    {% for post in hospital %}
+        <div class="post">
+            <h3>
+                <a href="/department/{{post.hospital_name}}" class="text-info">
+                    {{ post.hospital_name }}
+                </a>
+            </h3>
+            <div class="card">
+                <div class="card-header">
+                    医院等级：{{ post.hospital_rank }}  地址：{{ post.hospital_location }}
+                </div>
+                <div class="card-body">
+                    {{ post.hospital_message}}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

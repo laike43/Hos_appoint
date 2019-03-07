@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}医疗中心{% endblock %}
+
+{% block content %}
+
+
+<h1 style="text-align: center">Welcome!</h1>
+    <h3 style="text-align: center">管理预约订单-首页</h3>
+    <a href="/add_seats/">增加预约</a>
+    <ul>
+        {% for row in seats %}
+            <li> 医生:{{ row.name }} 
+    <p>    预约编号:{{ row.seat_num }}   <a href="/del_seats/{{row.id}}">删除</a>
+    <p>    时间段:  {{ row.starttime }}  <b>到</b>  {{ row.endtime }}
+    <p>    预约数量:{{row.seatsnum}}
+    <p>    注意事项:{{row.brief}}
+            </li>
+   
+
+
+    <hr>   
+    {% endfor %}
+    </ul>
+
+
+
+{% endblock %}

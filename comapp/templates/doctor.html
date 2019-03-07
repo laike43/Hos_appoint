@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}医疗中心{% endblock %}
+
+{% block content %}
+    {% for post in doctor %}
+        <div class="post">
+            <h3>
+                <a href="/seats/{{post.name}}" class="text-info">
+                    {{ post.name }}
+                </a>
+            </h3>
+            <div class="card">
+                <div class="card-header">
+                    性别：{{ post.sex }}  编号：{{ post.num }}
+                </div>
+                <div class="card-body">
+                    简介:{{ post.message}}
+                </div>
+            </div>
+        </div>
+        <hr>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}医疗中心{% endblock %}
+
+{% block content %}
+    {% for post in blogs %}
+        <div class="post">
+            <h3>
+                <a href="{{ post.get_absolute_url}}/blogs/{{post.id}}" class="text-info">
+                    {{ post.title }}
+                </a>
+            </h3>
+            <div class="card">
+                <div class="card-header">
+                    发布时间：{{ post.pub_date }}  作者：{{ post.author }}
+                </div>
+                <div class="card-body">
+                    {{ post.content|truncatewords:5|linebreaks }}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
